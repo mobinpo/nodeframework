@@ -20,11 +20,39 @@
 - **Laravel Boost (Nodevel edition)** — bundled MCP server: `npx tsx bin/boost.ts install`
 - **Testing** — in-process HTTP client, assertions, `npx tsx bin/artisan.ts test`
 
-## Quick Start
+## Installation
+
+Install the Nodevel CLI globally:
+
+```shell
+npm install -g @nodevel/cli
+```
+
+Then create a new application — just like `laravel new`:
+
+```shell
+nodevel new project-name
+cd project-name
+npm run dev          # http://localhost:8000
+```
+
+The installer copies the application skeleton, generates your `APP_KEY`, initializes git, and installs dependencies.
+
+## Quick Start (this repository)
+
+This repository is the development environment for the framework packages:
+
+| Package | npm | Path |
+| --- | --- | --- |
+| Framework core | [`@nodevel/framework`](https://www.npmjs.com/package/@nodevel/framework) | `vendor/nodevel/framework` |
+| Blade engine | [`@nodevel/blade`](https://www.npmjs.com/package/@nodevel/blade) | `vendor/nodevel/blade` |
+| Installer CLI | [`@nodevel/cli`](https://www.npmjs.com/package/@nodevel/cli) | `cli` |
+
+To hack on the framework using this repo as the demo app:
 
 ```shell
 npm install
-cp .env.example .env          # then: npx tsx bin/artisan.ts key:generate
+cp .env.example .env             # then: npx tsx bin/artisan.ts key:generate
 npx tsx bin/artisan.ts migrate   # create tables
 npx tsx bin/artisan.ts serve     # http://localhost:8000
 ```

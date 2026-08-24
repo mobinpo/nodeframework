@@ -43,32 +43,40 @@ Nodevel's opinionated conventions and well-defined structure make it an ideal fr
 <a name="installing-node"></a>
 ### Installing Node.js and the Nodevel Installer
 
-Before creating your first Nodevel application, make sure your local machine has [Node.js](https://nodejs.org) (18+) and NPM installed:
+Before creating your first Nodevel application, make sure your local machine has [Node.js](https://nodejs.org) (20+) and NPM installed:
 
 ```shell
 node -v
 npm -v
 ```
 
-If you already have a Nodevel application skeleton (as in this repository), the framework is vendored under `vendor/nodevel` and requires no additional installation — just run `npm install`.
+Then install the Nodevel CLI globally via NPM:
+
+```shell
+npm install -g @nodevel/cli
+```
 
 <a name="creating-an-application"></a>
 ### Creating an Application
 
-Once dependencies are installed, you can start Nodevel's local development server:
+After you have installed the Nodevel CLI, you are ready to create a new application — just like `laravel new`:
 
 ```shell
-npm install
-npx tsx bin/artisan.ts serve
+nodevel new project-name
 ```
 
-Or via npm:
+The installer copies the application skeleton, generates your `APP_KEY`, initializes a git repository, and installs all dependencies.
+
+Once the application has been created, you can start the local development server:
 
 ```shell
-npm run artisan -- serve
+cd project-name
+npm run dev
 ```
 
-Once you have started the development server, you can access your application in your web browser at [http://localhost:8000](http://localhost:8000). Of course, you may also want to [configure a database](#databases-and-migrations) and run the necessary migrations.
+Once you have started the development server, you can access your application in your web browser at [http://localhost:8000](http://localhost:8000). Of course, you may also want to [configure a database](#databases-and-migrations) and run the necessary migrations (`npx tsx bin/artisan.ts migrate`).
+
+If you are working inside this repository (the framework development environment), the framework is vendored under `vendor/nodevel` and requires no additional installation — just run `npm install` and `npx tsx bin/artisan.ts serve`.
 
 <a name="initial-configuration"></a>
 ## Initial Configuration

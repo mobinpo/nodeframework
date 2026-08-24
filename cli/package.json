@@ -1,0 +1,33 @@
+{
+    "name": "@nodevel/cli",
+    "version": "1.0.0",
+    "description": "The Nodevel application installer — scaffold new Nodevel projects with a single command.",
+    "license": "MIT",
+    "type": "commonjs",
+    "bin": {
+        "nodevel": "./bin/nodevel.js"
+    },
+    "files": [
+        "bin",
+        "lib",
+        "skeleton"
+    ],
+    "engines": {
+        "node": ">=20"
+    },
+    "keywords": [
+        "nodevel",
+        "cli",
+        "installer",
+        "framework",
+        "laravel-inspired"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mobinpo/nodeframework.git",
+        "directory": "cli"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

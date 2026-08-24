@@ -1,0 +1,26 @@
+{
+    "name": "nodevel-app",
+    "version": "1.0.0",
+    "description": "A Nodevel application.",
+    "license": "MIT",
+    "type": "commonjs",
+    "scripts": {
+        "dev": "tsx bin/artisan.ts serve",
+        "serve": "tsx bin/artisan.ts serve",
+        "artisan": "tsx bin/artisan.ts",
+        "test": "tsx bin/artisan.ts test",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@nodevel/blade": "^1.0.0",
+        "@nodevel/framework": "^1.0.0",
+        "better-sqlite3": "^12.4.1",
+        "mysql2": "^3.15.0",
+        "pg": "^8.16.0"
+    },
+    "devDependencies": {
+        "@types/node": "^26.2.0",
+        "tsx": "^4.23.12",
+        "typescript": "^7.0.2"
+    }
+}
