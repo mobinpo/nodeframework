@@ -1,0 +1,28 @@
+'use strict';
+
+/**
+ * Factory definitions for the {{model}} model.
+ */
+const factory = {
+    model: require('../../app/Models/{{model}}'),
+
+    definition(): Record<string, any> {
+        return {
+            name: 'Example',
+        };
+    },
+};
+
+/** Create one or more persisted models. */
+factory.count = 0;
+factory.create = async function create(attributes: Record<string, any> = {}): Promise<any> {
+    const record = { ...this.definition(), ...attributes };
+    const instance = new this.model({});
+    instance.fill(record);
+    await instance.save();
+    return instance;
+};
+
+module.exports = factory;
+
+export {};

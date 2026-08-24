@@ -1,0 +1,13 @@
+'use strict';
+
+/**
+ * A trait — a mixin applied via `Object.assign(Class.prototype, Trait)` or
+ * the `useTrait()` helper.
+ */
+const {{class}}: Record<string, any> = {
+    //
+};
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

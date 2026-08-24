@@ -1,0 +1,25 @@
+{
+    "name": "@nodevel/blade",
+    "version": "1.0.0",
+    "description": "Blade templating engine for Nodevel — a Laravel-inspired templating language for Node.js.",
+    "license": "MIT",
+    "type": "commonjs",
+    "main": "index.ts",
+    "files": [
+        "index.ts",
+        "compiler"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mobinpo/nodeframework.git",
+        "directory": "vendor/nodevel/blade"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "exports": {
+        ".": "./index.ts",
+        "./compiler": ["./compiler/index.ts", "./compiler/index.js"],
+        "./compiler/*": ["./compiler/*.ts", "./compiler/*.js"]
+    }
+}

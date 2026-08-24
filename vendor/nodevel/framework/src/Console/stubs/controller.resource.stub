@@ -1,0 +1,40 @@
+'use strict';
+
+const Response = require('@nodevel/framework').Http.Response;
+
+/**
+ * {{class}} — a resource controller.
+ */
+class {{class}} {
+    /** Display a listing of the resource. */
+    async index(request: any): Promise<any> {
+        void request;
+        return Response.json([]);
+    }
+
+    /** Store a newly created resource. */
+    async store(request: any): Promise<any> {
+        const validated = request.all();
+        return Response.json(validated, 201);
+    }
+
+    /** Display the specified resource. */
+    async show(request: any, id: any): Promise<any> {
+        return Response.json({ id });
+    }
+
+    /** Update the specified resource. */
+    async update(request: any, id: any): Promise<any> {
+        return Response.json({ id, ...request.all() });
+    }
+
+    /** Remove the specified resource. */
+    async destroy(request: any, id: any): Promise<any> {
+        void id;
+        return Response.noContent();
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

@@ -1,0 +1,21 @@
+'use strict';
+
+/**
+ * Seed the database with {{model}} records.
+ */
+class {{class}} {
+    app: any;
+
+    constructor(app: any) {
+        this.app = app;
+    }
+
+    async run(): Promise<void> {
+        const Model = require('../../app/Models/{{model}}');
+        // await Model.create({ ... });
+    }
+}
+
+module.exports = {{class}};
+
+export {};

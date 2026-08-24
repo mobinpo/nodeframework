@@ -1,0 +1,21 @@
+'use strict';
+
+/**
+ * {{class}} — broadcast channel authorization.
+ *
+ * Register in routes/channels.ts:
+ *   Broadcast.channel('name.{id}', {{class}});
+ */
+class {{class}} {
+    /**
+     * Authenticate the user's access to the channel.
+     * Return true/false or presence data.
+     */
+    async join(user: any, ...parameters: any[]): Promise<boolean | any> {
+        return Boolean(user);
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

@@ -1,0 +1,27 @@
+'use strict';
+
+/**
+ * {{class}} — authorization policies.
+ */
+class {{class}} {
+    view(user: any, model: any): boolean {
+        void user; void model;
+        return true;
+    }
+    create(user: any): boolean {
+        void user;
+        return true;
+    }
+    update(user: any, model: any): boolean {
+        void user; void model;
+        return true;
+    }
+    delete(user: any, model: any): boolean {
+        void user; void model;
+        return true;
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

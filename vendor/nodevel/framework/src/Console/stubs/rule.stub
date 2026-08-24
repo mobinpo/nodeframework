@@ -1,0 +1,18 @@
+'use strict';
+
+/**
+ * {{class}} — a custom validation rule.
+ */
+class {{class}} {
+    /**
+     * Return null when valid, or an error message string.
+     */
+    validate(attribute: string, value: any): string | null {
+        void attribute;
+        return value === undefined ? 'This field is required.' : null;
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

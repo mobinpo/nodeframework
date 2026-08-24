@@ -1,0 +1,19 @@
+'use strict';
+
+/**
+ * Create the {{table}} table.
+ */
+module.exports = {
+    async up(schema: any): Promise<void> {
+        await schema.create('{{table}}', (table: any) => {
+            table.id();
+            table.timestamps();
+        });
+    },
+
+    async down(schema: any): Promise<void> {
+        await schema.dropIfExists('{{table}}');
+    },
+};
+
+export {};

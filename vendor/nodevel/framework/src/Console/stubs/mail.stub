@@ -1,0 +1,14 @@
+'use strict';
+
+const Message = require('@nodevel/framework').Mail.Message;
+
+/**
+ * {{class}} — a mailable builder.
+ */
+function build(): any {
+    return new Message().subject('{{class}}').line('Hello from Nodevel.');
+}
+
+module.exports = { build };
+
+export {};

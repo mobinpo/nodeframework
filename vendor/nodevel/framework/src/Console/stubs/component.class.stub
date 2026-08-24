@@ -1,0 +1,26 @@
+'use strict';
+
+/**
+ * {{class}} — a view component. Return the props this component accepts;
+ * everything else lands on `$attributes`.
+ */
+class {{class}} {
+    static props: string[] = [];
+
+    attributes: Record<string, any>;
+
+    constructor(attributes: Record<string, any> = {}) {
+        this.attributes = attributes;
+    }
+
+    /**
+     * Data made available to the component view.
+     */
+    data(): Record<string, any> {
+        return {};
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

@@ -1,0 +1,15 @@
+'use strict';
+
+const Model = require('@nodevel/framework').Database.Model;
+
+/**
+ * The {{class}} model.
+ */
+class {{class}} extends Model {
+    static table: string = '{{table}}';
+    static fillable: string[] = [];
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

@@ -1,0 +1,16 @@
+'use strict';
+
+/**
+ * {{class}} — a global Eloquent scope.
+ *
+ * Register with: Model.globalScopes = [(builder) => builder.where(...)];
+ */
+function apply(builder: any): any {
+    // Example: builder.where('active', 1);
+    void builder;
+    return builder;
+}
+
+module.exports = { apply };
+
+export {};

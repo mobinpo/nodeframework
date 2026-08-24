@@ -1,0 +1,29 @@
+{
+    "name": "@nodevel/framework",
+    "version": "1.0.0",
+    "description": "A Laravel-inspired web application framework for Node.js.",
+    "license": "MIT",
+    "type": "commonjs",
+    "main": "index.ts",
+    "files": [
+        "index.ts",
+        "src"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mobinpo/nodeframework.git",
+        "directory": "vendor/nodevel/framework"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "exports": {
+        ".": "./index.ts",
+        "./src/*": ["./src/*.ts", "./src/*.js"],
+        "./src/*/*": ["./src/*/*.ts", "./src/*/*.js"],
+        "./src/*/*/*": ["./src/*/*/*.ts", "./src/*/*/*.js"]
+    },
+    "peerDependencies": {
+        "@nodevel/blade": "*"
+    }
+}

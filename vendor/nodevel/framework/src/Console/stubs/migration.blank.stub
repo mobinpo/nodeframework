@@ -1,0 +1,13 @@
+'use strict';
+
+module.exports = {
+    async up(): Promise<void> {
+        //
+    },
+
+    async down(): Promise<void> {
+        //
+    },
+};
+
+export {};

@@ -1,0 +1,29 @@
+'use strict';
+
+const Notification = require('@nodevel/framework').Notifications.Notification;
+
+/**
+ * {{class}}
+ */
+class {{class}} extends Notification {
+    via(): string[] {
+        return ['mail'];
+    }
+
+    toMail(notifiable: any): any {
+        const Message = require('@nodevel/framework').Mail.Message;
+        return new Message()
+            .to(notifiable.attributes?.email)
+            .subject('{{class}}')
+            .line('You have a new notification.');
+    }
+
+    toArray(notifiable: any): Record<string, any> {
+        void notifiable;
+        return {};
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

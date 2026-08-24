@@ -1,0 +1,16 @@
+'use strict';
+
+/**
+ * {{class}} — observes the {{model}} model lifecycle events.
+ *
+ * Register with: Model.observe(new {{class}}());
+ */
+class {{class}} {
+    created(model: any): void {}
+    updated(model: any): void {}
+    deleted(model: any): void {}
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

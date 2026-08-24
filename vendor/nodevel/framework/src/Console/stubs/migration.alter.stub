@@ -1,0 +1,20 @@
+'use strict';
+
+/**
+ * Modify the {{table}} table.
+ */
+module.exports = {
+    async up(schema: any): Promise<void> {
+        await schema.table('{{table}}', (table: any) => {
+            //
+        });
+    },
+
+    async down(schema: any): Promise<void> {
+        await schema.table('{{table}}', (table: any) => {
+            //
+        });
+    },
+};
+
+export {};

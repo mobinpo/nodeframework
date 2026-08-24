@@ -1,0 +1,20 @@
+'use strict';
+
+/**
+ * {{class}}
+ *
+ * Register an alias in bootstrap/app.ts to use it:
+ *   middleware alias: 'example' -> this class
+ */
+class {{class}} {
+    /**
+     * Handle an incoming request.
+     */
+    async handle(request: any, next: (request: any) => Promise<any>): Promise<any> {
+        return next(request);
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

@@ -1,0 +1,14 @@
+'use strict';
+
+/**
+ * {{class}}
+ */
+class {{class}} {
+    async handle(event: any): Promise<void> {
+        void event;
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

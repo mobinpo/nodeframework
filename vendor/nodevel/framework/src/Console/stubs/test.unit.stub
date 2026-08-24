@@ -1,0 +1,23 @@
+'use strict';
+
+/**
+ * {{class}} — a unit test (no framework boot).
+ */
+interface TestCase {
+    name: string;
+    setup?(): Promise<void>;
+    fn(): Promise<void>;
+}
+
+module.exports.tests = [
+    {
+        name: 'example unit test',
+        async fn() {
+            const { assertTrue } =
+                require('../vendor/nodevel/framework/src/Foundation/Testing/TestCase');
+            assertTrue(true);
+        },
+    },
+] as TestCase[];
+
+export {};

@@ -1,0 +1,20 @@
+'use strict';
+
+/**
+ * {{class}} — a queueable job.
+ */
+class {{class}} {
+    data: Record<string, any>;
+
+    constructor(data: Record<string, any> = {}) {
+        this.data = data;
+    }
+
+    async handle(): Promise<void> {
+        //
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

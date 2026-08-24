@@ -1,0 +1,16 @@
+'use strict';
+
+/**
+ * {{class}} — dispatched via events().dispatch(new {{class}}(...)).
+ */
+class {{class}} {
+    payload: Record<string, any>;
+
+    constructor(payload: Record<string, any> = {}) {
+        this.payload = payload;
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};

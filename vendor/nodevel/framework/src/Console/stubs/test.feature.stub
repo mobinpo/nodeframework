@@ -1,0 +1,31 @@
+'use strict';
+
+const { createTestApp } = require('../../bootstrap');
+
+interface TestCase {
+    name: string;
+    setup?(): Promise<void>;
+    fn(): Promise<void>;
+}
+
+let ctx: any;
+
+/**
+ * {{class}} — a feature test (boots the framework).
+ */
+module.exports.tests = [
+    {
+        name: 'example feature test',
+        async setup() {
+            ctx = ctx || (await createTestApp());
+        },
+        async fn() {
+            const { assertTrue } =
+                require('../vendor/nodevel/framework/src/Foundation/Testing/TestCase');
+            const response = await ctx.get('/');
+            assertTrue(response.status() > 0);
+        },
+    },
+] as TestCase[];
+
+export {};

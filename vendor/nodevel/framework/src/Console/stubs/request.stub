@@ -1,0 +1,20 @@
+'use strict';
+
+const FormRequest = require('@nodevel/framework').Validation.FormRequest;
+
+/**
+ * {{class}}
+ */
+class {{class}} extends FormRequest {
+    static rules(): Record<string, any> {
+        return {};
+    }
+
+    static authorize(): boolean {
+        return true;
+    }
+}
+
+module.exports = { default: {{class}}, {{class}} };
+
+export {};
