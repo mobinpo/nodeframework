@@ -53,11 +53,11 @@ The `.cron()` expression follows standard five-field cron syntax (minute, hour, 
 In production, the scheduler is driven by a single cron entry that invokes `schedule:run` every minute:
 
 ```shell
-* * * * * cd /path-to-your-project && node bin/artisan.js schedule:run >> /dev/null 2>&1
+* * * * * cd /path-to-your-project && npx tsx bin/artisan.ts schedule:run >> /dev/null 2>&1
 ```
 
 `schedule:run` evaluates every defined task against the current minute and executes only those that are due. To inspect the registered tasks without running them:
 
 ```shell
-node bin/artisan.js schedule:list
+npx tsx bin/artisan.ts schedule:list
 ```

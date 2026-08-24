@@ -42,5 +42,5 @@ module.exports = { default: DeployCommand, Deploy: DeployCommand };
 Schedule it or invoke it over SSH:
 
 ```shell
-ssh deploy@server "cd /var/www/app && node bin/artisan.js deploy"
+ssh deploy@server "cd /var/www/app && npx tsx bin/artisan.ts deploy"
 ```

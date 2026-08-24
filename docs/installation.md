@@ -59,7 +59,7 @@ Once dependencies are installed, you can start Nodevel's local development serve
 
 ```shell
 npm install
-node bin/artisan.js serve
+npx tsx bin/artisan.ts serve
 ```
 
 Or via npm:
@@ -103,7 +103,7 @@ DB_PASSWORD=
 Then install the corresponding driver package (`mysql2` for MySQL/MariaDB, `pg` for PostgreSQL) and run your application's database migrations:
 
 ```shell
-node bin/artisan.js migrate
+npx tsx bin/artisan.ts migrate
 ```
 
 <a name="directory-configuration"></a>

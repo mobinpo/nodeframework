@@ -18,7 +18,7 @@ Notifications are typically short, informational messages about something in you
 ## Creating Notifications
 
 ```shell
-node bin/artisan.js make:notification InvoicePaid
+npx tsx bin/artisan.ts make:notification InvoicePaid
 ```
 
 Each notification class declares its channels via `via()` and per-channel builder methods:

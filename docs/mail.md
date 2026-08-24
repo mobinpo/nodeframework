@@ -20,7 +20,7 @@ Mail configuration lives in `config/mail.js`; the `MAIL_MAILER` environment vari
 ## Generating Mailables
 
 ```shell
-node bin/artisan.js make:mail OrderShipped
+npx tsx bin/artisan.ts make:mail OrderShipped
 ```
 
 This creates a builder in `app/Mail/OrderShipped.js`.

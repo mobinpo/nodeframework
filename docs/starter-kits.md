@@ -26,9 +26,9 @@ Once the skeleton is copied in place, finish setup exactly like any Nodevel app:
 
 ```shell
 cp .env.example .env
-node bin/artisan.js key:generate
-node bin/artisan.js migrate
-node bin/artisan.js serve
+npx tsx bin/artisan.ts key:generate
+npx tsx bin/artisan.ts migrate
+npx tsx bin/artisan.ts serve
 ```
 
 <a name="building-your-own"></a>
@@ -38,6 +38,6 @@ A starter kit is nothing more than a repository containing a working Nodevel app
 
 1. Create an application and implement your authentication UI, dashboard, and shared components (Blade components live in `resources/views/components`).
 2. Remove application-specific routes from `routes/web.js`, keeping the authentication routes.
-3. Publish the repository; consumers clone it, run `npm install`, and boot with `node bin/artisan.js serve`.
+3. Publish the repository; consumers clone it, run `npm install`, and boot with `npx tsx bin/artisan.ts serve`.
 
 Because all Nodevel conventions (paths, class names, command signatures) are deterministic, generated code needs no post-processing.

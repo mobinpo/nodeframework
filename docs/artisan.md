@@ -10,16 +10,16 @@
 <a name="introduction"></a>
 ## Introduction
 
-Artisan is the command-line interface included with Nodevel. It is invoked with `node bin/artisan.js` (or `npm run artisan --`). To view a list of all available Artisan commands:
+Artisan is the command-line interface included with Nodevel. It is invoked with `npx tsx bin/artisan.ts` (or `npm run artisan --`). To view a list of all available Artisan commands:
 
 ```shell
-node bin/artisan.js list
+npx tsx bin/artisan.ts list
 ```
 
 Every command also includes a help screen describing available arguments and options:
 
 ```shell
-node bin/artisan.js migrate --help
+npx tsx bin/artisan.ts migrate --help
 ```
 
 Core commands include:

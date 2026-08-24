@@ -29,12 +29,12 @@ Nodevel includes Eloquent, an object-relational mapper (ORM) that makes it enjoy
 To get started, create an Eloquent model. Models live in the `app/Models` directory and extend the framework's `Model` class. Use the `make:model` Artisan command:
 
 ```shell
-node bin/artisan.js make:model Flight
-node bin/artisan.js make:model Flight --migration   # also create a migration (-m)
-node bin/artisan.js make:model Flight --factory     # also a factory (-f)
-node bin/artisan.js make:model Flight --seed        # also a seeder (-s)
-node bin/artisan.js make:model Flight --controller  # also a controller (-c)
-node bin/artisan.js make:model Flight --all         # all of the above (-a)
+npx tsx bin/artisan.ts make:model Flight
+npx tsx bin/artisan.ts make:model Flight --migration   # also create a migration (-m)
+npx tsx bin/artisan.ts make:model Flight --factory     # also a factory (-f)
+npx tsx bin/artisan.ts make:model Flight --seed        # also a seeder (-s)
+npx tsx bin/artisan.ts make:model Flight --controller  # also a controller (-c)
+npx tsx bin/artisan.ts make:model Flight --all         # all of the above (-a)
 ```
 
 <a name="eloquent-model-conventions"></a>

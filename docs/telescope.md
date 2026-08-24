@@ -33,6 +33,6 @@ APP_DEBUG=true
 The Tinker REPL gives direct access to the booted application for ad-hoc probing:
 
 ```shell
-node bin/artisan.js tinker
+npx tsx bin/artisan.ts tinker
 >>> await app.make('db').table('users').count()
 ```

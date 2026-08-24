@@ -21,4 +21,4 @@ Plain static assets work with zero tooling: drop files into `public/` and refere
 <script src="{{ asset('js/app.js') }}" defer></script>
 ```
 
-The `public/storage` symlink created by `node bin/artisan.js storage:link` exposes stored files under the same public root.
+The `public/storage` symlink created by `npx tsx bin/artisan.ts storage:link` exposes stored files under the same public root.

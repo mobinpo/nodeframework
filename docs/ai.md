@@ -20,7 +20,7 @@ Two pieces work together:
 ## Prerequisites
 
 - Node.js 20+ (`node --version`)
-- A Nodevel application (`node bin/artisan.js` runs successfully)
+- A Nodevel application (`npx tsx bin/artisan.ts` runs successfully)
 
 <a name="getting-started"></a>
 ## Getting Started
@@ -28,7 +28,7 @@ Two pieces work together:
 Install Boost's agent configuration, then open your editor as usual:
 
 ```shell
-node bin/boost.js install
+npx tsx bin/boost.ts install
 ```
 
 Agents that support MCP (Claude Code, Cursor, Windsurf, Copilot agent mode) will discover the `nodevel` server from `.mcp.json` automatically.
@@ -36,7 +36,7 @@ Agents that support MCP (Claude Code, Cursor, Windsurf, Copilot agent mode) will
 Verify the server answers:
 
 ```shell
-echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | node bin/boost.js mcp
+echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | npx tsx bin/boost.ts mcp
 ```
 
 <a name="project-rules-and-guidelines"></a>
@@ -50,7 +50,7 @@ Create an `AGENTS.md` at your repository root so every agent shares the same rul
 - Framework: Nodevel (Laravel-port). Docs live in `docs/`, one page per Laravel doc.
 - Always run `node artisan route:list` before adding routes.
 - Models extend `require('@nodevel/framework').Eloquent.Model`.
-- Tests: `node bin/artisan.js test`. Never leave the suite red.
+- Tests: `npx tsx bin/artisan.ts test`. Never leave the suite red.
 ```
 
 Keep it short and imperative — agents read it verbatim.

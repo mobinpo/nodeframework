@@ -36,4 +36,4 @@ const { chromium } = require('playwright');
 })();
 ```
 
-Start the app first with `node bin/artisan.js serve` (or use `handleRequestServer(basePath)` programmatically inside a test bootstrap to bind an ephemeral port).
+Start the app first with `npx tsx bin/artisan.ts serve` (or use `handleRequestServer(basePath)` programmatically inside a test bootstrap to bind an ephemeral port).

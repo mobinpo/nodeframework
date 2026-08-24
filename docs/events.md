@@ -17,8 +17,8 @@ Nodevel's events provide a simple observer-pattern implementation. Events may be
 ## Generating Events and Listeners
 
 ```shell
-node bin/artisan.js make:event OrderShipped
-node bin/artisan.js make:listener SendShipmentNotification --event=OrderShipped
+npx tsx bin/artisan.ts make:event OrderShipped
+npx tsx bin/artisan.ts make:listener SendShipmentNotification --event=OrderShipped
 ```
 
 <a name="defining-events"></a>

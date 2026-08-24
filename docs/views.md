@@ -35,7 +35,7 @@ Route.get('/', () => view('greeting', { name: 'James' }));
 Create a view by placing a `.blade.js` file in `resources/views`, or with Artisan:
 
 ```shell
-node bin/artisan.js make:view greeting
+npx tsx bin/artisan.ts make:view greeting
 ```
 
 The first argument to `view()` is dotted path notation relative to `resources/views`; the second is data made available to the template.
@@ -115,6 +115,6 @@ Creators execute immediately after the view instance is created (rather than rig
 Blade templates compile on demand and cache by file mtime. For production, precompile everything as part of deployment:
 
 ```shell
-node bin/artisan.js view:cache
-node bin/artisan.js view:clear
+npx tsx bin/artisan.ts view:cache
+npx tsx bin/artisan.ts view:clear
 ```

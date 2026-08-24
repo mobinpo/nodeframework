@@ -10,7 +10,7 @@ Nodevel mirrors Laravel 13 conventions, so most application code ports mechanica
 
 | Laravel | Nodevel |
 | --- | --- |
-| `php artisan ...` | `node bin/artisan.js ...` (or `npm run artisan -- ...`) |
+| `php artisan ...` | `npx tsx bin/artisan.ts ...` (or `npm run artisan -- ...`) |
 | `composer require pkg` | `npm install pkg` |
 | `bootstrap/app.php` | `bootstrap/app.js` (same `withMiddleware`, alias style) |
 | `routes/web.php` / `routes/console.php` | `routes/web.js` / `routes/console.js` |
@@ -31,5 +31,5 @@ After pulling a framework update, refresh dependencies and re-run optimization:
 
 ```shell
 npm install
-node bin/artisan.js optimize
+npx tsx bin/artisan.ts optimize
 ```

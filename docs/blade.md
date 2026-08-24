@@ -186,8 +186,8 @@ Blade comments are not present in rendered HTML:
 Components group reusable markup with data and slots. Create one with Artisan:
 
 ```shell
-node bin/artisan.js make:component Alert          # class + view
-node bin/artisan.js make:component forms.input --view   # anonymous view component
+npx tsx bin/artisan.ts make:component Alert          # class + view
+npx tsx bin/artisan.ts make:component forms.input --view   # anonymous view component
 ```
 
 Class components live in `app/View/Components`; anonymous templates in `resources/views/components`.

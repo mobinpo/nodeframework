@@ -20,7 +20,7 @@ Middleware provide a convenient mechanism for inspecting and filtering HTTP requ
 Create middleware with Artisan:
 
 ```shell
-node bin/artisan.js make:middleware EnsureTokenIsValid
+npx tsx bin/artisan.ts make:middleware EnsureTokenIsValid
 ```
 
 A middleware's `handle` method receives the request and a `next` closure; call `next(request)` to pass the request deeper:

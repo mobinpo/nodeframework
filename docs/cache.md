@@ -70,5 +70,5 @@ await cache.flush();                    // wipe the whole store
 Or from the CLI:
 
 ```shell
-node bin/artisan.js cache:clear
+npx tsx bin/artisan.ts cache:clear
 ```

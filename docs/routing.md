@@ -103,8 +103,8 @@ Route.view('/welcome', 'welcome', { name: 'Taylor' });
 The `route:list` Artisan command can easily provide an overview of all of the routes that are defined by your application:
 
 ```shell
-node bin/artisan.js route:list
-node bin/artisan.js route:list --path=api
+npx tsx bin/artisan.ts route:list
+npx tsx bin/artisan.ts route:list --path=api
 ```
 
 <a name="route-parameters"></a>

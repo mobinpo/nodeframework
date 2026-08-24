@@ -19,7 +19,7 @@ When using any tool in the "real world", you feel more confident if you understa
 <a name="first-steps"></a>
 ### First Steps
 
-The entry point for all requests to a Nodevel application is the HTTP server started by `node bin/artisan.js serve` (or any Node HTTP server wired to the kernel). Each incoming request is captured into a framework `Request` object — an enriched wrapper around Node's `IncomingMessage`.
+The entry point for all requests to a Nodevel application is the HTTP server started by `npx tsx bin/artisan.ts serve` (or any Node HTTP server wired to the kernel). Each incoming request is captured into a framework `Request` object — an enriched wrapper around Node's `IncomingMessage`.
 
 The first action taken by Nodevel is to create (or reuse) the application / [service container](container.md) instance and load `.env` plus the `config/` files.
 

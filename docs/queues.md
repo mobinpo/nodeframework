@@ -29,7 +29,7 @@ A *connection* is the backend driver; a *queue* is a named channel inside it. Jo
 ## Creating Jobs
 
 ```shell
-node bin/artisan.js make:job ProcessPodcast
+npx tsx bin/artisan.ts make:job ProcessPodcast
 ```
 
 ```js
@@ -68,10 +68,10 @@ The first argument names the job class file inside `app/Jobs`; the second carrie
 Laravel-style Artisan commands drive the worker:
 
 ```shell
-node bin/artisan.js queue:work                     # daemon mode
-node bin/artisan.js queue:work --once              # process a single job
-node bin/artisan.js queue:work --stop-when-empty   # drain, then exit
-node bin/artisan.js queue:work --queue=emails      # listen on another queue
+npx tsx bin/artisan.ts queue:work                     # daemon mode
+npx tsx bin/artisan.ts queue:work --once              # process a single job
+npx tsx bin/artisan.ts queue:work --stop-when-empty   # drain, then exit
+npx tsx bin/artisan.ts queue:work --queue=emails      # listen on another queue
 ```
 
 Programmatically, the same behaviour is available on the worker instance:
@@ -87,7 +87,7 @@ The worker polls the connection, executes each job's `handle()`, deletes it on s
 The `jobs` table used by the `database` queue connection can be created with:
 
 ```shell
-node bin/artisan.js queue:table
+npx tsx bin/artisan.ts queue:table
 ```
 
 <a name="dealing-with-failed-jobs"></a>
@@ -96,8 +96,8 @@ node bin/artisan.js queue:table
 Inspect failure counts with `queue:failed` and retry with `queue:retry <id>`:
 
 ```shell
-node bin/artisan.js queue:failed
-node bin/artisan.js queue:retry 1
+npx tsx bin/artisan.ts queue:failed
+npx tsx bin/artisan.ts queue:retry 1
 ```
 
 Failed job events are dispatched through the event dispatcher so listeners can log or alert.

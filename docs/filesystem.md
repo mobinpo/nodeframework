@@ -93,5 +93,5 @@ await disk.delete('avatars/1.png');
 Expose the `public` disk over HTTP with the `storage:link` Artisan command, which symlinks `public/storage` to `storage/app/public`:
 
 ```shell
-node bin/artisan.js storage:link
+npx tsx bin/artisan.ts storage:link
 ```

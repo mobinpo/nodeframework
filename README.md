@@ -1,10 +1,10 @@
 # Nodevel
 
-**Nodevel** is a Laravel-inspired web application framework for Node.js — expressive, elegant syntax for building full-stack web applications and APIs.
+**Nodevel** is a Laravel-inspired web application framework for Node.js — expressive, elegant syntax for building full-stack web applications and APIs. Written in **TypeScript** (run directly via [`tsx`](https://github.com/esbuild-kit/tsx), type-checked with `tsc`).
 
 ## Features
 
-- **Artisan console** (`node bin/artisan.js`) — `serve`, `test`, `migrate`, `db:seed`, `db:wipe`, `queue:work`, `schedule:run`, `route:list`, `about`, `make:*` generators, and more
+- **Artisan console** (`npx tsx bin/artisan.ts`) — `serve`, `test`, `migrate`, `db:seed`, `db:wipe`, `queue:work`, `schedule:run`, `route:list`, `about`, `make:*` generators, and more
 - **Eloquent ORM** — ActiveRecord models, relationships, eager loading, soft deletes, mass assignment protection, events, observers
 - **Schema builder & migrations** — SQLite, MySQL/MariaDB, PostgreSQL
 - **Blade templating engine** — directives, components, slots, layouts, stacks, fragments (htmx-friendly)
@@ -17,31 +17,33 @@
 - **Validation** — Laravel-syntax rules (`required|email|unique:users`)
 - **Events, notifications, mail, broadcasting** — driver based
 - **Dates** — fluent `Date` wrapper (`Support/Date`) with Carbon-style arithmetic
-- **Laravel Boost (Nodevel edition)** — bundled MCP server: `node bin/boost.js install`
-- **Testing** — in-process HTTP client, assertions, `node bin/artisan.js test`
+- **Laravel Boost (Nodevel edition)** — bundled MCP server: `npx tsx bin/boost.ts install`
+- **Testing** — in-process HTTP client, assertions, `npx tsx bin/artisan.ts test`
 
 ## Quick Start
 
 ```shell
 npm install
-cp .env.example .env          # then: node bin/artisan.js key:generate
-node bin/artisan.js migrate   # create tables
-node bin/artisan.js serve     # http://localhost:8000
+cp .env.example .env          # then: npx tsx bin/artisan.ts key:generate
+npx tsx bin/artisan.ts migrate   # create tables
+npx tsx bin/artisan.ts serve     # http://localhost:8000
 ```
+
+npm scripts: `npm run artisan -- <command>`, `npm run serve`, `npm test`, `npm run typecheck`.
 
 ## Example
 
-```js
-// routes/web.js
+```ts
+// routes/web.ts
 const { Route } = require('@nodevel/framework').Facades;
 
 Route.get('/', () => view('welcome', { name: 'Nodevel' }));
 
-// app/Models/Post.js
+// app/Models/Post.ts
 class Post extends Model {
-    static table = 'posts';
-    static fillable = ['title', 'body'];
-    static softDeletes = true;
+    static table: string = 'posts';
+    static fillable: string[] = ['title', 'body'];
+    static softDeletes: boolean = true;
 }
 
 await Post.create({ title: 'Hello', body: 'World' });
@@ -55,5 +57,5 @@ Full documentation lives in [`docs/`](docs/index.html) — open `docs/index.html
 ## Tests
 
 ```shell
-node bin/artisan.js test
+npx tsx bin/artisan.ts test
 ```

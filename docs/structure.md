@@ -79,7 +79,7 @@ The `storage` directory contains logs, compiled Blade caches, file-based session
 <a name="the-tests-directory"></a>
 ### The Tests Directory
 
-The `tests` directory holds automated tests in `Feature` and `Unit`. Run them with `node bin/artisan.js test`.
+The `tests` directory holds automated tests in `Feature` and `Unit`. Run them with `npx tsx bin/artisan.ts test`.
 
 <a name="the-vendor-directory"></a>
 ### The Vendor Directory

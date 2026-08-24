@@ -76,7 +76,7 @@ In Blade views the `@error('title') ... @enderror` directive displays the first 
 For complex scenarios encapsulate rules and authorization in a form request class:
 
 ```shell
-node bin/artisan.js make:request StorePostRequest
+npx tsx bin/artisan.ts make:request StorePostRequest
 ```
 
 ```js

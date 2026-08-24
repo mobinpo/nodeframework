@@ -19,14 +19,14 @@ All of the configuration files for the Nodevel framework are stored in the `conf
 The `about` Artisan command displays an overview of your application's configuration, drivers, and environment:
 
 ```shell
-node bin/artisan.js about
-node bin/artisan.js about --only=environment
+npx tsx bin/artisan.ts about
+npx tsx bin/artisan.ts about --only=environment
 ```
 
 Or explore a specific configuration file's values in detail:
 
 ```shell
-node bin/artisan.js config:show database
+npx tsx bin/artisan.ts config:show database
 ```
 
 <a name="environment-configuration"></a>
@@ -92,10 +92,10 @@ The current environment is determined by the `APP_ENV` variable.
 Unencrypted `.env` files should never be stored in source control, but encrypted copies may be committed safely:
 
 ```shell
-node bin/artisan.js env:encrypt
-node bin/artisan.js env:encrypt --readable     # keep variable names visible
+npx tsx bin/artisan.ts env:encrypt
+npx tsx bin/artisan.ts env:encrypt --readable     # keep variable names visible
 
-node bin/artisan.js env:decrypt --key=YOUR_KEY --force
+npx tsx bin/artisan.ts env:decrypt --key=YOUR_KEY --force
 ```
 
 Store the encryption key in a secure password manager — it is required to decrypt.
@@ -124,8 +124,8 @@ Typed getters (`string`, `integer`, `float`, `boolean`, `array`) throw when the 
 To give your application a speed boost, cache all configuration into a single file:
 
 ```shell
-node bin/artisan.js config:cache
-node bin/artisan.js config:clear
+npx tsx bin/artisan.ts config:cache
+npx tsx bin/artisan.ts config:clear
 ```
 
 Run this as part of production deployment — never during local development, where options change frequently.
@@ -141,9 +141,9 @@ The `debug` option in `config/app.js` determines how much error information is d
 Put the app in maintenance mode with `down` and restore it with `up`:
 
 ```shell
-node bin/artisan.js down --refresh=15          # auto-refresh header
-node bin/artisan.js down --secret=1630542a     # bypass URL /1630542a...
-node bin/artisan.js up
+npx tsx bin/artisan.ts down --refresh=15          # auto-refresh header
+npx tsx bin/artisan.ts down --secret=1630542a     # bypass URL /1630542a...
+npx tsx bin/artisan.ts up
 ```
 
 While down, all requests receive a 503 response.

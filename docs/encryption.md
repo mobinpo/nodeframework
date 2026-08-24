@@ -15,7 +15,7 @@ Nodevel's encryption services provide a convenient interface for encrypting and 
 The key is read from `APP_KEY` in your `.env`. Generate one:
 
 ```shell
-node bin/artisan.js key:generate
+npx tsx bin/artisan.ts key:generate
 ```
 
 `key:generate` uses `crypto.randomBytes(32)` and stores the result base64-encoded (`base64:...`). The session cookie and Sanctum token hashing rely on this configuration.

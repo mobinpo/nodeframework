@@ -16,12 +16,12 @@ No dashboard is bundled. Nodevel queues expose the same operational surface thro
 
 | Task | Command |
 | --- | --- |
-| Start workers | `node bin/artisan.js queue:work --queue=default --tries=3` |
-| Drain then exit | `node bin/artisan.js queue:work --stop-when-empty` |
-| List failed jobs | `node bin/artisan.js queue:failed` |
-| Retry failures | `node bin/artisan.js queue:retry all` (or by UUID / ID) |
-| Delete one failure | `node bin/artisan.js queue:forget <uuid>` |
-| Purge failures | `node bin/artisan.js queue:flush` |
+| Start workers | `npx tsx bin/artisan.ts queue:work --queue=default --tries=3` |
+| Drain then exit | `npx tsx bin/artisan.ts queue:work --stop-when-empty` |
+| List failed jobs | `npx tsx bin/artisan.ts queue:failed` |
+| Retry failures | `npx tsx bin/artisan.ts queue:retry all` (or by UUID / ID) |
+| Delete one failure | `npx tsx bin/artisan.ts queue:forget <uuid>` |
+| Purge failures | `npx tsx bin/artisan.ts queue:flush` |
 
 Failed jobs persist to the `failed_jobs` table with `uuid`, `queue`, `payload`, `exception`, and `failed_at` columns, matching Laravel's schema.
 

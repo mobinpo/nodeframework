@@ -9,7 +9,7 @@
 <a name="introduction"></a>
 ## Introduction
 
-> **Nodevel adaptation:** Laravel Boost ships as a Composer package (`vendor/bin/boost`). In Nodevel it ships with the framework itself as `bin/boost.js` — no extra install step beyond `npm install`.
+> **Nodevel adaptation:** Laravel Boost ships as a Composer package (`vendor/bin/boost`). In Nodevel it ships with the framework itself as `bin/boost.ts` — no extra install step beyond `npm install`.
 
 Laravel Boost is a local MCP (Model Context Protocol) server that gives AI agents deep knowledge of your Nodevel application. Instead of guessing at your routes, schema, or configuration, an agent asks Boost — which answers with structured, versioned truth straight from your running codebase.
 
@@ -19,7 +19,7 @@ Laravel Boost is a local MCP (Model Context Protocol) server that gives AI agent
 Boost is bundled. Install its agent wiring with:
 
 ```shell
-node bin/boost.js install
+npx tsx bin/boost.ts install
 ```
 
 This writes a `nodevel` server entry into your project's `.mcp.json`:
@@ -29,7 +29,7 @@ This writes a `nodevel` server entry into your project's `.mcp.json`:
     "mcpServers": {
         "nodevel": {
             "command": "node",
-            "args": ["bin/boost.js", "mcp"]
+            "args": ["bin/boost.ts", "mcp"]
         }
     }
 }
@@ -51,7 +51,7 @@ The server communicates over stdio using line-delimited JSON-RPC 2.0.
 List tools without starting the server:
 
 ```shell
-node bin/boost.js list-tools
+npx tsx bin/boost.ts list-tools
 ```
 
 Call any tool programmatically from Node:
@@ -67,8 +67,8 @@ const schema = await callTool('database-schema', { table: 'users' }, __dirname);
 
 Once `.mcp.json` exists, point your agent at it:
 
-- **Claude Code** — run `claude mcp add-from-claude-desktop`, or start manually with `node bin/boost.js mcp`.
-- **Cursor / Windsurf** — add an MCP command entry pointing at `node bin/boost.js mcp`.
+- **Claude Code** — run `claude mcp add-from-claude-desktop`, or start manually with `npx tsx bin/boost.ts mcp`.
+- **Cursor / Windsurf** — add an MCP command entry pointing at `npx tsx bin/boost.ts mcp`.
 - **GitHub Copilot / VS Code** — register the same command under MCP servers in settings.
 
 Because the protocol is plain JSON-RPC over stdio, any MCP-compatible client works without additional libraries.
@@ -76,7 +76,7 @@ Because the protocol is plain JSON-RPC over stdio, any MCP-compatible client wor
 Example session over stdio:
 
 ```shell
-echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05"}}' | node bin/boost.js mcp
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05"}}' | npx tsx bin/boost.ts mcp
 ```
 
 ```json

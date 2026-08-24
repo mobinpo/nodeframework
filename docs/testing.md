@@ -8,7 +8,7 @@
 <a name="introduction"></a>
 ## Introduction
 
-Nodevel is built with testing in mind. The framework ships with a tiny test runner (`node bin/artisan.js test`), assertion helpers, and an in-process HTTP client so feature tests can hit your routes without a network.
+Nodevel is built with testing in mind. The framework ships with a tiny test runner (`npx tsx bin/artisan.ts test`), assertion helpers, and an in-process HTTP client so feature tests can hit your routes without a network.
 
 By default, the `tests` directory contains two directories: `Feature` and `Unit`. Unit tests focus on small, isolated pieces of code. Feature tests exercise larger portions of the system — even full requests through the router.
 
@@ -27,8 +27,8 @@ You may create a `.env.testing` file; it is used when `APP_ENV=testing`.
 Generate tests with Artisan:
 
 ```shell
-node bin/artisan.js make:test UserTest          # tests/Feature
-node bin/artisan.js make:test MathTest --unit   # tests/Unit
+npx tsx bin/artisan.ts make:test UserTest          # tests/Feature
+npx tsx bin/artisan.ts make:test MathTest --unit   # tests/Unit
 ```
 
 A test file exports a `tests` array of cases:
@@ -52,11 +52,11 @@ Each case supports optional `setup()` / `teardown()` hooks awaited before and af
 ## Running Tests
 
 ```shell
-node bin/artisan.js test                       # run everything
-node bin/artisan.js test --filter=routing      # by name substring
-node bin/artisan.js test --stop-on-failure     # halt at first failure
-node bin/artisan.js test --profile             # show slowest tests
-node bin/artisan.js test UserTest              # single file
+npx tsx bin/artisan.ts test                       # run everything
+npx tsx bin/artisan.ts test --filter=routing      # by name substring
+npx tsx bin/artisan.ts test --stop-on-failure     # halt at first failure
+npx tsx bin/artisan.ts test --profile             # show slowest tests
+npx tsx bin/artisan.ts test UserTest              # single file
 ```
 
 The runner reports passed/failed counts, duration, and prints stack traces for failures with a non-zero exit code on failure (CI-friendly).

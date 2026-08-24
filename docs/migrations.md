@@ -27,9 +27,9 @@ Migrations are like version control for your database, allowing your team to def
 Use the `make:migration` Artisan command. The new migration is placed in `database/migrations`; each filename contains a timestamp that determines execution order:
 
 ```shell
-node bin/artisan.js make:migration create_flights_table
-node bin/artisan.js make:migration create_flights_table --create=flights
-node bin/artisan.js make:migration add_votes_to_users_table --table=users
+npx tsx bin/artisan.ts make:migration create_flights_table
+npx tsx bin/artisan.ts make:migration create_flights_table --create=flights
+npx tsx bin/artisan.ts make:migration add_votes_to_users_table --table=users
 ```
 
 <a name="migration-structure"></a>
@@ -62,29 +62,29 @@ module.exports = {
 To run all of your outstanding migrations, execute the `migrate` Artisan command:
 
 ```shell
-node bin/artisan.js migrate
-node bin/artisan.js migrate --force      # run without confirmation in production
-node bin/artisan.js migrate --pretend    # print SQL without running
+npx tsx bin/artisan.ts migrate
+npx tsx bin/artisan.ts migrate --force      # run without confirmation in production
+npx tsx bin/artisan.ts migrate --pretend    # print SQL without running
 ```
 
 To see which migrations have run and which are pending:
 
 ```shell
-node bin/artisan.js migrate:status
+npx tsx bin/artisan.ts migrate:status
 ```
 
 <a name="rolling-back-migrations"></a>
 ### Rolling Back Migrations
 
 ```shell
-node bin/artisan.js migrate:rollback          # roll back the last batch
-node bin/artisan.js migrate:rollback --step=5 # last five migrations
-node bin/artisan.js migrate:rollback --batch=3
-node bin/artisan.js migrate:reset             # roll back everything
+npx tsx bin/artisan.ts migrate:rollback          # roll back the last batch
+npx tsx bin/artisan.ts migrate:rollback --step=5 # last five migrations
+npx tsx bin/artisan.ts migrate:rollback --batch=3
+npx tsx bin/artisan.ts migrate:reset             # roll back everything
 
-node bin/artisan.js migrate:refresh           # reset + re-migrate
-node bin/artisan.js migrate:fresh             # drop all tables + re-migrate
-node bin/artisan.js migrate:fresh --seed      # ...then seed
+npx tsx bin/artisan.ts migrate:refresh           # reset + re-migrate
+npx tsx bin/artisan.ts migrate:fresh             # drop all tables + re-migrate
+npx tsx bin/artisan.ts migrate:fresh --seed      # ...then seed
 ```
 
 <a name="tables"></a>

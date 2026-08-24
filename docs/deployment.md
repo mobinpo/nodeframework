@@ -98,7 +98,7 @@ Route.get('/up', () => ({ ok: true }));
 Run workers under your process manager too:
 
 ```shell
-pm2 start node --name nodevel-worker -- bin/artisan.js queue:work database --tries=3
+pm2 start node --name nodevel-worker -- bin/artisan.ts queue:work database --tries=3
 ```
 
 Restart workers during deployment so they pick up new code:

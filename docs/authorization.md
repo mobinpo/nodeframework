@@ -50,7 +50,7 @@ Group abilities around a model in a policy class.
 ### Generating Policies
 
 ```shell
-node bin/artisan.js make:policy PostPolicy --model=Post
+npx tsx bin/artisan.ts make:policy PostPolicy --model=Post
 ```
 
 <a name="writing-policies"></a>

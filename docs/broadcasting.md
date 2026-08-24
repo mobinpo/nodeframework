@@ -77,7 +77,7 @@ The callback receives the authenticated user plus wildcard parameters; returning
 Generate a channel class for complex logic:
 
 ```shell
-node bin/artisan.js make:channel OrderChannel
+npx tsx bin/artisan.ts make:channel OrderChannel
 ```
 
 ```js
