@@ -1,0 +1,1 @@
+<x-alert type="danger">Watch out</x-alert>

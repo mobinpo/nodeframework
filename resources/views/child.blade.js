@@ -1,0 +1,1 @@
+@extends('layouts.base')@section('title','Page')@section('content','Body')

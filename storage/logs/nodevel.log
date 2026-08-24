@@ -1,0 +1,50 @@
+[2026-08-23T11:24:05.751Z] local.ERROR: ReferenceError: view is not defined
+    at /app/nodeframework/routes/web.js:6:5
+    at Router.runAction (/app/nodeframework/vendor/nodevel/framework/src/Routing/Router.js:290:30)
+    at Router.runRouteWithinStack (/app/nodeframework/vendor/nodevel/framework/src/Routing/Router.js:222:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-08-23T11:25:24.148Z] local.ERROR: ReferenceError: view is not defined
+    at /app/nodeframework/routes/web.js:6:5
+    at Router.runAction (/app/nodeframework/vendor/nodevel/framework/src/Routing/Router.js:290:30)
+    at Router.runRouteWithinStack (/app/nodeframework/vendor/nodevel/framework/src/Routing/Router.js:222:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-08-23T11:26:48.431Z] local.ERROR: Error: Synchronous view rendering requires a pre-rendered result. Use `await view.renderAsync()`.
+    at Factory.renderCompiledSync (/app/nodeframework/vendor/nodevel/framework/src/View/Factory.js:263:15)
+    at View.render (/app/nodeframework/vendor/nodevel/framework/src/View/View.js:33:29)
+    at normalizeResponse (/app/nodeframework/vendor/nodevel/framework/src/Routing/Router.js:350:37)
+    at Router.runAction (/app/nodeframework/vendor/nodevel/framework/src/Routing/Router.js:291:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Pipeline.then (/app/nodeframework/vendor/nodevel/framework/src/Pipeline/Pipeline.js:44:20)
+    at async HttpKernel.handleRequest (/app/nodeframework/vendor/nodevel/framework/src/Foundation/HttpKernel.js:32:30)
+[2026-08-23T11:27:27.325Z] local.ERROR: TypeError: scope.hasFragments is not a function
+    at Factory.renderAsync (/app/nodeframework/vendor/nodevel/framework/src/View/Factory.js:244:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async normalizeResponse (/app/nodeframework/vendor/nodevel/framework/src/Routing/Router.js:350:22)
+    at async Pipeline.then (/app/nodeframework/vendor/nodevel/framework/src/Pipeline/Pipeline.js:44:20)
+    at async HttpKernel.handleRequest (/app/nodeframework/vendor/nodevel/framework/src/Foundation/HttpKernel.js:32:30)
+[2026-08-23T11:29:08.375Z] local.ERROR: SyntaxError: Unexpected token '<'
+    at new Function (<anonymous>)
+    at executeBody (/app/nodeframework/vendor/nodevel/framework/src/View/Factory.js:292:16)
+    at Factory.renderAsync (/app/nodeframework/vendor/nodevel/framework/src/View/Factory.js:206:19)
+    at View.renderAsync (/app/nodeframework/vendor/nodevel/framework/src/View/View.js:37:29)
+    at normalizeResponse (/app/nodeframework/vendor/nodevel/framework/src/Routing/Router.js:350:35)
+    at Router.runAction (/app/nodeframework/vendor/nodevel/framework/src/Routing/Router.js:291:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Pipeline.then (/app/nodeframework/vendor/nodevel/framework/src/Pipeline/Pipeline.js:44:20)
+    at async HttpKernel.handleRequest (/app/nodeframework/vendor/nodevel/framework/src/Foundation/HttpKernel.js:32:30)
+[2026-08-24T05:45:27.563Z] local.ERROR: Error: CSRF token mismatch.
+    at VerifyCsrf.handle (/app/nodeframework/vendor/nodevel/framework/src/Http/Middleware/VerifyCsrf.js:54:27)
+    at /app/nodeframework/vendor/nodevel/framework/src/Pipeline/Pipeline.js:87:52
+    at /app/nodeframework/vendor/nodevel/framework/src/Pipeline/Pipeline.js:37:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async StartSession.handle (/app/nodeframework/vendor/nodevel/framework/src/Http/Middleware/StartSession.js:23:26)
+[2026-08-24T06:01:55.717Z] local.ERROR: Job failed permanently: Job class not found: NoSuchJob
+[2026-08-24T06:02:38.206Z] local.ERROR: Job failed permanently: Job class not found: NoSuchJob
+[2026-08-24T06:03:58.863Z] local.ERROR: Job failed permanently: Job class not found: NoSuchJob
+[2026-08-24T06:04:43.507Z] local.ERROR: Job failed permanently: Job class not found: NoSuchJob
+[2026-08-24T06:23:52.694Z] local.ERROR: Error: CSRF token mismatch.
+    at VerifyCsrf.handle (/app/nodeframework/vendor/nodevel/framework/src/Http/Middleware/VerifyCsrf.js:54:27)
+    at /app/nodeframework/vendor/nodevel/framework/src/Pipeline/Pipeline.js:87:52
+    at /app/nodeframework/vendor/nodevel/framework/src/Pipeline/Pipeline.js:37:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async StartSession.handle (/app/nodeframework/vendor/nodevel/framework/src/Http/Middleware/StartSession.js:23:26)

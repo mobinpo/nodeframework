@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nodevel Documentation</title>
+<style>
+    :root { --bg:#ffffff; --fg:#1e293b; --muted:#64748b; --accent:#0ea5e9; --border:#e2e8f0; }
+    @media (prefers-color-scheme: dark) {
+        :root { --bg:#0f172a; --fg:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --border:#1e293b; }
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, sans-serif;
+           display:grid; grid-template-columns: 260px 1fr; min-height:100vh;
+           background:var(--bg); color:var(--fg); }
+    nav { border-right:1px solid var(--border); padding:1.5rem 1rem; overflow-y:auto; max-height:100vh; position:sticky; top:0; }
+    nav h2 { font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 .75rem; }
+    nav a { display:block; padding:.3rem .5rem; border-radius:.35rem; color:var(--fg); text-decoration:none; font-size:.9rem; }
+    nav a:hover, nav a.active { background:color-mix(in srgb, var(--accent) 12%, transparent); color:var(--accent); }
+    main { padding:2.5rem 3rem 4rem; max-width:60rem; line-height:1.65; }
+    h1 { font-size:2rem; border-bottom:1px solid var(--border); padding-bottom:.6rem; }
+    pre { background:color-mix(in srgb, var(--fg) 6%, var(--bg)); border:1px solid var(--border);
+          padding:1rem; border-radius:.5rem; overflow-x:auto; font-size:.875rem; line-height:1.55; }
+    code { font-family: ui-monospace, SFMono-Regular, monospace; font-size:.875em;
+           background:color-mix(in srgb, var(--fg) 7%, var(--bg)); padding:.1rem .35rem; border-radius:.3rem; }
+    pre code { background:none; padding:0; }
+    table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.92rem; }
+    th, td { border:1px solid var(--border); padding:.45rem .7rem; text-align:left; }
+    th { background:color-mix(in srgb, var(--fg) 4%, var(--bg)); }
+    blockquote { border-left:3px solid var(--accent); margin:1rem 0; padding:.25rem 1rem; color:var(--muted); }
+    a { color:var(--accent); }
+</style>
+</head>
+<body>
+<nav id="nav"><h2>Nodevel Docs</h2><div id="toc"></div></nav>
+<main id="content">Loading…</main>
+<script>
+const PAGES = [
+    'installation','configuration','structure','lifecycle','frontend','ai','container','facades','routing',
+    'middleware','requests','responses','session','views','blade','eloquent','eloquent-relationships',
+    'eloquent-collections','eloquent-factories','eloquent-mutators','eloquent-resources','eloquent-serialization','collections','queries','pagination',
+    'migrations','seeding','validation','authentication','sanctum','authorization','verification','passwords',
+    'encryption','hashing','artisan','console-tests','events','providers','packages','boost','queues',
+    'scheduling','cache','redis','filesystem','mail','notifications','broadcasting','logging',
+    'context','errors','http-client','processes','rate-limiting','strings','urls','localization',
+    'search','database','database-testing','testing','mocking','http-tests','csrf','controllers',
+    'precognition','vite','deployment','images','contracts','dates','helpers',
+    'starter-kits','releases','upgrade','billing','dusk','envoy','horizon','octane',
+    'passport','pennant','pint','pulse','reverb','sail','scout','socialite',
+    'telescope','valet','mix'
+];
+
+const slugify = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+
+function renderMarkdown(md) {
+    // Minimal markdown renderer: headings, code fences, tables, lists, inline styles.
+    const esc = (s) => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    let out = '', inCode = false, lines = md.split('\n'), i = 0;
+
+    while (i < lines.length) {
+        const line = lines[i];
+
+        if (line.startsWith('```')) { inCode = !inCode; out += inCode ? '<pre><code>' : '</code></pre>'; i++; continue; }
+        if (inCode) { out += esc(line) + '\n'; i++; continue; }
+
+        const h = /^(#{1,4})\s+(.*)$/.exec(line);
+        if (h) { const lvl = h[1].length; const txt = h[2].replace(/\[(.+?)\]\(.*?\)/g,'$1'); out += `<h${lvl} id="${slugify(txt)}">${txt}</h${lvl}>`; i++; continue; }
+
+        if (/^\s*[-|]/.test(line) && lines[i+1] && /^\s*\|?[\s:-]+\|/.test(lines[i+1]) === false && line.trim().startsWith('|')) { /* table start below */ }
+
+        if (line.trim().startsWith('|') && lines[i+1] && /^\s*\|[-\s|:]+\|\s*$/.test(lines[i+1])) {
+            out += '<table><thead><tr>';
+            line.split('|').slice(1,-1).forEach(c => out += `<th>${inline(c)}</th>`);
+            out += '</tr></thead><tbody>'; i += 2;
+            while (i < lines.length && lines[i].trim().startsWith('|')) {
+                out += '<tr>';
+                lines[i].split('|').slice(1,-1).forEach(c => out += `<td>${inline(c)}</td>`);
+                out += '</tr>'; i++;
+            }
+            out += '</tbody></table>'; continue;
+        }
+
+        if (/^[-*]\s+/.test(line)) {
+            out += '<ul>'; while (i < lines.length && /^[-*]\s+/.test(lines[i])) { out += `<li>${inline(lines[i].replace(/^[-*]\s+/,''))}</li>`; i++; } out += '</ul>'; continue;
+        }
+        if (/^\d+\.\s+/.test(line)) {
+            out += '<ol>'; while (i < lines.length && /^\d+\.\s+/.test(lines[i])) { out += `<li>${inline(lines[i].replace(/^\d+\.\s+/,''))}</li>`; i++; } out += '</ol>'; continue;
+        }
+        if (line.startsWith('> ')) { out += `<blockquote>${inline(line.slice(2))}</blockquote>`; i++; continue; }
+        if (line.trim() === '') { i++; continue; }
+
+        let para = '';
+        while (i < lines.length && lines[i].trim() !== '' && !/^(```|#{1,4}\s|[-*]\s|\d+\.\s|\||>\s)/.test(lines[i])) { para += lines[i] + '\n'; i++; }
+        if (para) out += `<p>${inline(para.trim())}</p>`; else i++;
+    }
+
+    function inline(s) {
+        return esc(s)
+            .replace(/`([^`]+)`/g, '<code>$1</code>')
+            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, txt, href) =>
+                href.endsWith('.md')
+                    ? `<a href="#/${href.replace('.md','')}">${txt}</a>`
+                    : `<a href="${href}" target="_blank" rel="noopener">${txt}</a>`);
+    }
+    return out;
+}
+
+async function show(name) {
+    try {
+        const res = await fetch(`${name}.md`);
+        const md = await res.text();
+        document.getElementById('content').innerHTML = renderMarkdown(md);
+        document.title = name + ' — Nodevel';
+    } catch (e) {
+        document.getElementById('content').textContent = 'Could not load page.';
+    }
+    document.querySelectorAll('#nav a').forEach(a => a.classList.toggle('active', a.dataset.page === name));
+}
+
+const toc = document.getElementById('toc');
+PAGES.forEach(p => {
+    const a = document.createElement('a');
+    a.textContent = p.replace(/-/g,' ').replace(/\b\w/g, c => c.toUpperCase());
+    a.href = `#/${p}`; a.dataset.page = p;
+    toc.appendChild(a);
+});
+
+function route() { show((location.hash.match(/^#\/(.+)$/) || [])[1] || 'installation'); }
+window.addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>

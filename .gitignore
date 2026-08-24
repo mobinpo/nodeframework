@@ -1,0 +1,15 @@
+/.phpunit.result.cache
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.xml
+npm-debug.log*
+yarn-error.log*
+.DS_Store

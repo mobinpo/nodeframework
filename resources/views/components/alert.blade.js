@@ -1,0 +1,1 @@
+<div{{ $attributes.merge({ class: "alert" }).toHtml() }} role="alert">{{ $type }}: {{ $slot }}</div>
