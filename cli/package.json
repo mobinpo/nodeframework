@@ -1,6 +1,6 @@
 {
     "name": "@nodevel/cli",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "The Nodevel application installer — scaffold new Nodevel projects with a single command.",
     "license": "MIT",
     "type": "commonjs",

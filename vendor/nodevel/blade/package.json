@@ -1,6 +1,6 @@
 {
     "name": "@nodevel/blade",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Blade templating engine for Nodevel — a Laravel-inspired templating language for Node.js.",
     "license": "MIT",
     "type": "commonjs",
@@ -19,7 +19,13 @@
     },
     "exports": {
         ".": "./index.ts",
-        "./compiler": ["./compiler/index.ts", "./compiler/index.js"],
-        "./compiler/*": ["./compiler/*.ts", "./compiler/*.js"]
+        "./compiler": [
+            "./compiler/index.ts",
+            "./compiler/index.js"
+        ],
+        "./compiler/*": [
+            "./compiler/*.ts",
+            "./compiler/*.js"
+        ]
     }
 }
